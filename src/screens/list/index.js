@@ -1,7 +1,7 @@
 import React from 'react';
 import ScreenTemplate from '../../components/ScreenTemplate';
 
-const ListScreen = props => {
+const ListScreen = () => {
   return <ScreenTemplate title="List" />;
 };
 

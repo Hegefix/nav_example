@@ -1,16 +1,6 @@
-import React, {useContext} from 'react';
-import {Text} from 'react-native';
+import React from 'react';
 import ScreenTemplate from '../../components/ScreenTemplate';
-import {AuthContext} from '../../App';
 
-const HomeScreen = () => {
-  const {signOut} = useContext(AuthContext);
-  return (
-    <ScreenTemplate
-      title="Home"
-      renderButton={() => <Text onPress={() => signOut()}>Log Out</Text>}
-    />
-  );
-};
+const HomeScreen = () => <ScreenTemplate title="Home" />;
 
 export default HomeScreen;
