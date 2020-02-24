@@ -1,6 +1,12 @@
 import React from 'react';
-import SplashScreen from './screens/splash';
+import {Provider} from 'react-redux';
+import AppContainer from './navigation/AppContainer';
+import store from './store';
 
-const App = () => <SplashScreen />;
+const App = () => (
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>
+);
 
 export default App;
