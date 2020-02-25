@@ -1,13 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {ProfileAvatar, ThemeButton} from '@components';
+import {View, Text} from 'react-native';
+import {ProfileAvatar, ThemeButton, Container} from '@components';
 
 const App = () => {
-  console.log(ProfileAvatar, ThemeButton);
   return (
-    <View style={styles.container}>
+    <Container>
       <Text>NAAAV</Text>
-      <View style={styles.centerView}>
+      <View>
         <ProfileAvatar onPress={() => console.log('avatar press')} />
         <ThemeButton
           title="Button"
@@ -15,20 +14,8 @@ const App = () => {
           onPress={() => console.log('button press')}
         />
       </View>
-    </View>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  centerView: {
-    flexDirection: 'row',
-    borderWidth: 1,
-  },
-});
 
 export default App;

@@ -1,9 +1,12 @@
 import React from 'react';
-import {Button} from 'react-native';
+import {View, Button} from 'react-native';
 import types from 'prop-types';
+import styles from './styles';
 
 const ThemeButton = ({title = '', color, onPress}) => (
-  <Button title={title} color={color} onPress={onPress} />
+  <View style={styles.buttonWrapper}>
+    <Button title={title} color={color} onPress={onPress} />
+  </View>
 );
 ThemeButton.propTypes = {
   title: types.string,
