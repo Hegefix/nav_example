@@ -1,12 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
-import SplashScreen from '../screens/Splash';
-import LoginScreen from '../screens/Login';
-import RegisterScreen from '../screens/Register';
-import HomeScreen from '../screens/Home';
-import ListScreen from '../screens/List';
+import * as screens from '@screens';
 
 const Stack = createStackNavigator();
 const AppContainer = () => {
@@ -19,27 +14,27 @@ const AppContainer = () => {
       <Stack.Navigator initialRouteName="splash">
         <Stack.Screen
           name="splash"
-          component={SplashScreen}
+          component={screens.SplashScreen}
           options={{title: 'Splash'}}
         />
         <Stack.Screen
           name="login"
-          component={LoginScreen}
+          component={screens.LoginScreen}
           options={{title: 'Login'}}
         />
         <Stack.Screen
           name="register"
-          component={RegisterScreen}
+          component={screens.RegisterScreen}
           options={{title: 'Register'}}
         />
         <Stack.Screen
           name="home"
-          component={HomeScreen}
+          component={screens.HomeScreen}
           options={{title: 'Home'}}
         />
         <Stack.Screen
           name="list"
-          component={ListScreen}
+          component={screens.ListScreen}
           options={{title: 'List'}}
         />
       </Stack.Navigator>
