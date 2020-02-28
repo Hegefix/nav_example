@@ -1,20 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {ProfileAvatar, ThemeButton, Container} from '@components';
+import {SafeAreaView} from 'react-native';
+import {TestScreen} from '@screens';
 
 const App = () => {
   return (
-    <Container>
-      <Text>NAAAV</Text>
-      <View>
-        <ProfileAvatar onPress={() => console.log('avatar press')} />
-        <ThemeButton
-          title="Button"
-          color="green"
-          onPress={() => console.log('button press')}
-        />
-      </View>
-    </Container>
+    <SafeAreaView style={{flex: 1}}>
+      <TestScreen />
+    </SafeAreaView>
   );
 };
 
