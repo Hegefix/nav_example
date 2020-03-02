@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { View, ScrollView, Text, TextInput } from 'react-native';
+// import Geolocation from '@react-native-community/geolocation';
 import { ScreenContainer } from '@components';
 import styles from './styles';
 
 const TestScreen = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+
+  // useEffect(() => {
+  //   Geolocation.requestAuthorization();
+  // }, []);
 
   const handleSubmitEditing = () => {
     messages.push(newMessage);
