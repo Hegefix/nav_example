@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  ScrollView,
-  Text,
-  TextInput,
-  KeyboardAvoidingView,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, ScrollView, Text, TextInput } from 'react-native';
+import { ScreenContainer } from '@components';
 import styles from './styles';
 
 const TestScreen = () => {
@@ -20,26 +14,24 @@ const TestScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-        <ScrollView contentContainerStyle={styles.scrollContent}>
-          {messages.map((message, index) => (
-            <Text key={index.toString()}>{message}</Text>
-          ))}
-        </ScrollView>
-        <View style={styles.inputWrapper}>
-          <TextInput
-            value={newMessage}
-            placeholder="Placeholder"
-            onChangeText={text => setNewMessage(text)}
-            numberOfLines={1}
-            returnKeyType="send"
-            onSubmitEditing={handleSubmitEditing}
-            style={styles.input}
-          />
-        </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+    <ScreenContainer withKeyboard>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        {messages.map((message, index) => (
+          <Text key={index.toString()}>{message}</Text>
+        ))}
+      </ScrollView>
+      <View style={styles.inputWrapper}>
+        <TextInput
+          value={newMessage}
+          placeholder="Placeholder"
+          onChangeText={text => setNewMessage(text)}
+          numberOfLines={1}
+          returnKeyType="send"
+          onSubmitEditing={handleSubmitEditing}
+          style={styles.input}
+        />
+      </View>
+    </ScreenContainer>
   );
 };
 
