@@ -14,10 +14,9 @@ const TestScreen = () => {
   const [newMessage, setNewMessage] = useState('');
 
   const handleSubmitEditing = () => {
-    const nextMessages = [...messages];
-    nextMessages.push(newMessage);
+    messages.push(newMessage);
     setNewMessage('');
-    setMessages(nextMessages);
+    setMessages(messages);
   };
 
   return (
